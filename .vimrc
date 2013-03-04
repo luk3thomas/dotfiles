@@ -14,7 +14,10 @@ set dictionary+=/usr/share/dict/words
 inoremap %{ {%  %}<esc>2hi
 inoremap %% {{  }}<esc>2hi
 inoremap <% <%=  %><esc>2hi
-inoremap { {<CR>}<Esc>ko
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
 
 inoremap <buffer> <md<space> <div class="media"><cr><tab><div class="img"><cr></div><cr><div class="bd"><cr></div><esc>o<esc>O</div><esc>jdd4ko<tab>
 inoremap <? <?php<space><space>?><Esc>2hi
@@ -42,9 +45,6 @@ nnoremap <leader>v :source $MYVIMRC<cr>
 nnoremap <leader>s :shell<cr>
 let g:closetag_html_style=1
 source ~/.vim/bundle/closetag/scripts/closetag.vim
-
-autocmd BufReadPost * :DetectIndent
-let g:detectindent_preferred_expandtab = 1
 
 let g:AutoPairsCenterLine = 0
 "set foldmethod=indent
