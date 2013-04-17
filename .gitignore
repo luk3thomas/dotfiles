@@ -1,1 +1,5 @@
 .ignore
+.vim/.netrwhist
+*.sw[o-p]
+*~
+.DS_Store
