@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/luk3/me/sites/sabra.com/current/public/stylesheets'
-let g:netrw_dirhist_2='/private/var/folders/mr/n_lxhlpd2vg67m_7ylwbn98r0000gn/T/ruby-build.20130302135011.73554'
