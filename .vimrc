@@ -5,12 +5,14 @@ set t_ti= t_te=
 set si
 set tabstop=4
 set shiftwidth=4
-set expandtab
 set ruler
 set hlsearch
 set formatoptions+=r
+set binary
+set noeol
 set dictionary+=/usr/share/dict/words
 "set backspace=indent,eol,start
+hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
 inoremap %{ {%  %}<esc>2hi
 inoremap %% {{  }}<esc>2hi
@@ -48,7 +50,9 @@ let g:closetag_html_style=1
 source ~/.vim/bundle/closetag/scripts/closetag.vim
 
 let g:AutoPairsCenterLine = 0
+let g:local_vimrc = '.vimrc'
 "set foldmethod=indent
 ""set foldnestmax=10
 ""set nofoldenable
 ""set foldlevel=1
+set expandtab
