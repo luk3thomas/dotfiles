@@ -3,10 +3,11 @@ set -o vi
 PS1="\u@\H: \w \$ "
 PS1="\u:\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ {\1}/') \w \$ "
 
-PATH=$PATH:/Users/luk3/bin
+PATH=$PATH:~/bin
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/heroku/bin
 PATH=/usr/local/Cellar/vim/7.3.783/bin:$PATH
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 export PGDATA=/usr/local/var/postgres
 
@@ -14,10 +15,12 @@ export PGDATA=/usr/local/var/postgres
 complete -o default -o nospace -W "$(/usr/bin/ruby -ne 'puts $_.split(/[,\s]+/)[1..-1].reject{|host| host.match(/\*|\?/)} if $_.match(/^\s*Host\s+/);' < $HOME/.ssh/config)" scp sftp ssh
 
 # tab completion for git
-source ~/.git-completion.bash
+source ~/.git-completion.sh
 
 # some more ls aliases
+alias c='clear'
 alias ll='ls -l'
+alias i='identify'
 alias la='ls -A'
 alias lla='ls -lA'
 alias lh='ls -lh'
@@ -32,7 +35,8 @@ alias gaa="git add ."
 alias gad="git add -u ."
 alias gb="git branch"
 alias gm="git commit -m"
-alias gr="git rm"
+alias gr="git remote"
+alias grm="git rm"
 alias gc="git checkout"
 alias gca="git commit --amend"
 alias gd="git diff"
@@ -49,12 +53,13 @@ alias pgrep="ps -e | grep"
 alias now="date +%Y%m%d%H%M%S"
 alias localhost="sudo chown luk3:www-data -Rv"
 alias brake="bundle exec rake"
+alias server="python -m SimpleHTTPServer"
 
 alias pgimport="pg_restore --verbose --clean --no-acl --no-owner -h localhost"
 
 export CLICOLOR=1
 
-export LSCOLORS=GxFxCxDxBxegedabagaced
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;35;40'
