@@ -21,15 +21,8 @@ inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
 
-inoremap <buffer> <md<space> <div class="media"><cr><tab><div class="img"><cr></div><cr><div class="bd"><cr></div><esc>o<esc>O</div><esc>jdd4ko<tab>
 inoremap <? <?php<space><space>?><Esc>2hi
 
-inoremap wppm<space> get_post_meta( $post->ID, '', true );<Esc>9hi
-inoremap <buffer> wpnav<space> wp_nav_menu( array(<cr><tab>'theme_location' => 'header',<cr>'container' => '',<cr>'menu_class' => 'menu'<cr>)<cr>);
-inoremap <buffer> gtpt<space> get_the_post_thumbnail( $post->ID, '' );<Esc>3hi
-inoremap <buffer> gpl<space> get_permalink( $post->ID );<Esc>3hi
-inoremap <buffer> af<space> echo apply_filters( 'the_content', $post->post_content )<esc>a
-inoremap <buffer> gp<space> $posts = get_posts( array( <cr><tab>'posts_per_page' => -1,<cr>'post_type' => '',<cr>)<cr>);<esc>kO'' => ''<esc>6hi
 inoremap qp<space> query_posts( array( <cr><tab>'posts_per_page' => -1,<cr>'post_type' => '',<cr>'orderby' => 'menu_order',<cr>'' => ''<cr>)<cr>);<cr><cr>get_template_part('loop', '');<cr><cr>wp_reset_query();<esc>8kla
 
 
