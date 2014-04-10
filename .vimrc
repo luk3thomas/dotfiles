@@ -9,7 +9,6 @@ set ruler
 set hlsearch
 set formatoptions+=r
 set binary
-set noeol
 set dictionary+=/usr/share/dict/words
 "set backspace=indent,eol,start
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
@@ -51,6 +50,7 @@ source ~/.vim/bundle/closetag/scripts/closetag.vim
 
 let g:AutoPairsCenterLine = 0
 let g:local_vimrc = '.vimrc'
+let g:PreserveNoEOL = 1
 "set foldmethod=indent
 ""set foldnestmax=10
 ""set nofoldenable
