@@ -13,12 +13,12 @@ set dictionary+=/usr/share/dict/words
 "set backspace=indent,eol,start
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
-inoremap %{ {%  %}<esc>2hi
+"inoremap %{ {%  %}<esc>2hi " Django
 inoremap %% {{  }}<esc>2hi
 inoremap <% <%=  %><esc>2hi
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
+"inoremap {{     {
 inoremap {}     {}
 
 inoremap <? <?php<space><space>?><Esc>2hi
