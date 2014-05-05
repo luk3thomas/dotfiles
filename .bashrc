@@ -19,6 +19,7 @@ source ~/.git-completion.sh
 
 # some more ls aliases
 alias c='clear'
+alias bx='bundle exec'
 alias ll='ls -l'
 alias i='identify'
 alias la='ls -A'
@@ -54,6 +55,7 @@ alias now="date +%Y%m%d%H%M%S"
 alias localhost="sudo chown luk3:www-data -Rv"
 alias brake="bundle exec rake"
 alias server="python -m SimpleHTTPServer"
+alias math="bc -l"
 
 alias pgimport="pg_restore --verbose --clean --no-acl --no-owner -h localhost"
 
@@ -66,3 +68,6 @@ export GREP_COLOR='1;35;40'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
