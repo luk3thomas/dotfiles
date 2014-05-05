@@ -3,8 +3,6 @@ call pathogen#helptags()
 syntax on
 set t_ti= t_te=
 set si
-set tabstop=4
-set shiftwidth=4
 set ruler
 set hlsearch
 set formatoptions+=r
@@ -42,7 +40,7 @@ let g:closetag_html_style=1
 source ~/.vim/bundle/closetag/scripts/closetag.vim
 
 let g:AutoPairsCenterLine = 0
-let g:local_vimrc = '.vimrc'
+let g:local_vimrc = '.vim'
 let g:PreserveNoEOL = 1
 "set foldmethod=indent
 ""set foldnestmax=10
