@@ -1,4 +1,5 @@
 set -o vi
+export EDITOR='vim'
 
 PS1="\u@\H: \w \$ "
 PS1="\u:\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ {\1}/') \w \$ "
@@ -56,6 +57,11 @@ alias localhost="sudo chown luk3:www-data -Rv"
 alias brake="bundle exec rake"
 alias server="python -m SimpleHTTPServer"
 alias math="bc -l"
+alias tmux="tmux -2"
+alias ts="tmux list-sessions"
+alias tl="tmux list-sessions"
+alias tk="tmux kill-session -t"
+alias ta="tmux attach-session"
 
 alias pgimport="pg_restore --verbose --clean --no-acl --no-owner -h localhost"
 

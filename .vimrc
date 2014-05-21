@@ -8,6 +8,8 @@ set hlsearch
 set formatoptions+=r
 set binary
 set dictionary+=/usr/share/dict/words
+set encoding=utf-8 
+set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly
 "set backspace=indent,eol,start
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
@@ -21,7 +23,7 @@ inoremap {}     {}
 
 inoremap <? <?php<space><space>?><Esc>2hi
 
-inoremap qp<space> query_posts( array( <cr><tab>'posts_per_page' => -1,<cr>'post_type' => '',<cr>'orderby' => 'menu_order',<cr>'' => ''<cr>)<cr>);<cr><cr>get_template_part('loop', '');<cr><cr>wp_reset_query();<esc>8kla
+nnoremap <leader>qp query_posts( array( <cr><tab>'posts_per_page' => -1,<cr>'post_type' => '',<cr>'orderby' => 'menu_order',<cr>'' => ''<cr>)<cr>);<cr><cr>get_template_part('loop', '');<cr><cr>wp_reset_query();<esc>8kla
 
 
 au BufNewFile,BufRead *.less set filetype=less
@@ -33,9 +35,11 @@ map <F2> <c-w><c-w>
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 map <F5> :set spell spelllang=en_us<CR>
+nnoremap <leader>gg :Gstatus<cr>
+nnoremap <leader>gm :Gcommit<cr>
+nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>v :source $MYVIMRC<cr>
-nnoremap <leader>s :shell<cr>
 let g:closetag_html_style=1
 source ~/.vim/bundle/closetag/scripts/closetag.vim
 
@@ -47,3 +51,17 @@ let g:PreserveNoEOL = 1
 ""set nofoldenable
 ""set foldlevel=1
 set expandtab
+set wildignore+=*node_modules/*
+
+" Vim airline
+set laststatus=2
+let g:airline_powerline_fonts = 1 
+set t_Co=256
+
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
