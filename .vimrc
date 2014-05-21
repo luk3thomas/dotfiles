@@ -44,7 +44,7 @@ let g:closetag_html_style=1
 source ~/.vim/bundle/closetag/scripts/closetag.vim
 
 let g:AutoPairsCenterLine = 0
-let g:local_vimrc = '.vim'
+let g:local_vimrc = '.vi'
 let g:PreserveNoEOL = 1
 "set foldmethod=indent
 ""set foldnestmax=10
