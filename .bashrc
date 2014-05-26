@@ -8,7 +8,7 @@ set -o vi
 export EDITOR='vim'
 
 PS1="\u@\H: \w \$ "
-PS1="\u \e[1;30m\]\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1 /')\e[0;32m\]\w \$ "
+PS1="\u \w\e[1;30m\]\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/')\e[0;32m\] "
 
 PATH=$PATH:~/bin
 PATH=$PATH:/usr/local/heroku/bin
