@@ -1,3 +1,9 @@
+# hack for tmux
+if [ -f /etc/profile ]; then
+  PATH=""
+  source /etc/profile
+fi
+
 set -o vi
 export EDITOR='vim'
 
@@ -5,10 +11,11 @@ PS1="\u@\H: \w \$ "
 PS1="\u:\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ {\1}/') \w \$ "
 
 PATH=$PATH:~/bin
-PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/heroku/bin
-PATH=/usr/local/Cellar/vim/7.3.783/bin:$PATH
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH=$PATH:/usr/local/opt/gnu-sed/libexec/gnubin
+PATH=$PATH:/usr/local/Cellar/vim/7.3.783/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 export PGDATA=/usr/local/var/postgres
 
@@ -71,9 +78,3 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;35;40'
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
