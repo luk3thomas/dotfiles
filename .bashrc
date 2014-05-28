@@ -78,4 +78,4 @@ export CLICOLOR=1
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;35;40'
+export GREP_COLOR='0;35;40'
