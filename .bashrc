@@ -21,6 +21,7 @@ export PGDATA=/usr/local/var/postgres
 
 # tab completion for ssh
 complete -o default -o nospace -W "$(/usr/bin/ruby -ne 'puts $_.split(/[,\s]+/)[1..-1].reject{|host| host.match(/\*|\?/)} if $_.match(/^\s*Host\s+/);' < $HOME/.ssh/config)" scp sftp ssh
+complete -o default -o nospace -W "$(ls $HOME/.tmuxinator/*.yml | awk -F '/' '{print $NF}' | sed 's/\.yml//')" mux
 
 # tab completion for git
 source ~/.git-completion.sh
