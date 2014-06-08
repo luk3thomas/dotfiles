@@ -51,7 +51,7 @@ hi SpecialKey                guifg=#777777 gui=NONE
 " Misc
 " ----
 " directory names and other special names in listings
-hi Directory                 guifg=#A5C261 gui=NONE
+hi Directory                 guifg=#A5C261 gui=NONE ctermfg=31
 
 " Popup Menu
 " ----------
@@ -115,12 +115,12 @@ hi PreProc                   guifg=#CC7833 gui=NONE ctermfg=103
 hi Statement                 guifg=#CC7833 gui=NONE ctermfg=172 cterm=NONE
 
 "rubyString
-hi String                    guifg=#A5C261 ctermfg=107
+hi String                    guifg=#A5C261 ctermfg=203
 
 hi Title                     guifg=#FFFFFF ctermfg=15
 
 "rubyConstant
-hi Type                      guifg=#DA4939 gui=NONE
+hi Type                      guifg=#DA4939 gui=NONE ctermfg=73
 
 hi DiffAdd                   guifg=#E6E1DC guibg=#144212
 hi DiffDelete                guifg=#E6E1DC guibg=#660000
