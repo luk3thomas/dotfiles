@@ -12,6 +12,11 @@ set encoding=utf-8
 set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly
 "set backspace=indent,eol,start
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
+hi Directory term=bold ctermfg=12 gui=bold guifg=Blue
+colorscheme luk3
+"colorscheme busierbee
+"colorscheme vividchalk
+"colorscheme railscast
 
 "inoremap %{ {%  %}<esc>2hi " Django
 inoremap %% {{  }}<esc>2hi
