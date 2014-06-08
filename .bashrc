@@ -13,8 +13,8 @@ PS1="\w\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/') $ "
 
 PATH=$PATH:~/bin
 PATH=$PATH:/usr/local/heroku/bin
-PATH=$PATH:/usr/local/opt/gnu-sed/libexec/gnubin
 PATH=$PATH:/usr/local/Cellar/vim/7.3.783/bin
+PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
