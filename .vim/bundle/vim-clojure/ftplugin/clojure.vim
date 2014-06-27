@@ -2,9 +2,6 @@
 " Language:     Clojure
 " Maintainer:   Meikel Brandmeyer <mb@kotka.de>
 
-set shiftwidth=2
-set tabstop=2
-
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
 	finish

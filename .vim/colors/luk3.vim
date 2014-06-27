@@ -28,7 +28,7 @@ let g:colors_name = "railscasts"
 
 hi Normal                    guifg=#E6E1DC guibg=#1c1c1c ctermfg=255 ctermbg=NONE
 hi Cursor                    guifg=#000000 guibg=#FFFFFF ctermfg=0 ctermbg=15	
-hi CursorLine                guibg=#333435 ctermbg=235 cterm=NONE
+hi CursorLine                guibg=#333435 ctermbg=234 cterm=NONE
 hi Search                    guibg=#5A647E ctermfg=NONE ctermbg=236 cterm=underline
 hi Visual                    guibg=#5A647E ctermbg=202
 hi LineNr                    guifg=#888888 ctermfg=242
@@ -37,6 +37,7 @@ hi StatusLineNC              guibg=#414243 gui=NONE
 hi VertSplit                 guibg=#414243 gui=NONE guifg=#414243
 hi CursorLineNr              guifg=#bbbbbb ctermfg=248
 hi ColorColumn               guibg=#333435 ctermbg=235
+hi Special                   guifg=#777777 gui=NONE ctermfg=249
 
 " Folds
 " -----
@@ -51,7 +52,7 @@ hi SpecialKey                guifg=#777777 gui=NONE
 " Misc
 " ----
 " directory names and other special names in listings
-hi Directory                 guifg=#A5C261 gui=NONE ctermfg=31
+hi Directory                 guifg=#A5C261 gui=NONE ctermfg=26
 
 " Popup Menu
 " ----------
@@ -66,8 +67,8 @@ hi PMenuThumb                guibg=#AAAAAA gui=NONE
 
 
 "rubyComment
-hi Comment                   guifg=#BC9458 gui=italic ctermfg=137
-hi Todo                      guifg=#BC9458 guibg=NONE gui=italic ctermfg=94
+hi Comment                   guifg=#BC9458 gui=italic ctermfg=243
+hi Todo                      guifg=#BC9458 guibg=NONE gui=italic ctermfg=0
 
 "rubyPseudoVariable
 "nil, self, symbols, etc
@@ -88,7 +89,8 @@ hi Function                  guifg=#FFC66D gui=NONE ctermfg=221 cterm=NONE
 
 "rubyIdentifier
 "@var, @@var, $var, etc
-hi Identifier                guifg=#D0D0FF gui=NONE ctermfg=73 cterm=NONE
+"this, var
+hi Identifier                guifg=#D0D0FF gui=NONE ctermfg=209 cterm=NONE
 
 "rubyInclude
 "include, autoload, extend, load, require
@@ -102,13 +104,13 @@ hi Keyword                   guifg=#CC7833 ctermfg=172 cterm=NONE
 hi Macro                     guifg=#CC7833 gui=NONE ctermfg=172
 
 "rubyInteger
-hi Number                    guifg=#A5C261 ctermfg=107
+hi Number                    guifg=#A5C261 ctermfg=24
 
 " #if, #else, #endif
 hi PreCondit                 guifg=#CC7833 gui=NONE ctermfg=172 cterm=NONE
 
 " generic preprocessor
-hi PreProc                   guifg=#CC7833 gui=NONE ctermfg=103
+hi PreProc                   guifg=#CC7833 gui=NONE ctermfg=13
 
 "rubyControl, rubyAccess, rubyEval
 "case, begin, do, for, if unless, while, until else, etc.
