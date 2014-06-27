@@ -71,7 +71,8 @@ alias ts="tmux list-sessions"
 alias tl="tmux list-sessions"
 alias tk="tmux kill-session -t"
 alias tka="tmux kill-server"
-alias ta="tmux attach-session"
+alias ta="tmux attach-session -t"
+alias t="todo"
 
 alias pgimport="pg_restore --verbose --clean --no-acl --no-owner -h localhost"
 
