@@ -35,8 +35,13 @@ au BufNewFile,BufRead *.less set filetype=less
 filetype plugin on
 au BufNewFile,BufReadPre *.py filetype plugin indent on
 au BufNewFile,BufReadPre *.rb filetype plugin indent on
+au BufNewFile,BufReadPre *.ru set filetype=ruby
+au BufNewFile,BufReadPre Gemfile set filetype=ruby
+au BufNewFile,BufReadPre Guardfile set filetype=ruby
 "
 map <F2> <c-w><c-w>
+map <tab> <c-w>l
+map <S-tab> <c-w>h
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 map <F5> :set spell spelllang=en_us<CR>
