@@ -11,9 +11,9 @@ PS1="\u@\H: \w \$ "
 PS1="\u \[\e[0;33m\]\]\w\[\e[0;32m\]\]\[\e[1;30m\]\]\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/')\[\e[0;32m\]\] \[\e[0;37m\]\]$\[\e[0;32m\]\] "
 PS1="\w\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/') $ "
 
+PATH=/usr/local/bin:$PATH
 PATH=$PATH:~/bin
 PATH=$PATH:/usr/local/heroku/bin
-PATH=$PATH:/usr/local/Cellar/vim/7.3.783/bin
 PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
