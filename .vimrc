@@ -47,6 +47,8 @@ map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 map <F5> :set spell spelllang=en_us<CR>
 map <C-c> "*y
+map <leader>[ [c
+map <leader>] ]c
 nnoremap <leader>gg :Gstatus<cr>
 nnoremap <leader>gm :Gcommit<cr>
 nnoremap <leader>gb :Gblame<cr>
