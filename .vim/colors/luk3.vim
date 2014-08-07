@@ -39,6 +39,12 @@ hi CursorLineNr              guifg=#bbbbbb ctermfg=248
 hi ColorColumn               guibg=#333435 ctermbg=235
 hi Special                   guifg=#777777 gui=NONE ctermfg=249
 
+" vim git gutter
+" -----
+" gutter background color
+
+hi SignColumn                ctermfg=NONE ctermbg=NONE	
+
 " Folds
 " -----
 " line used for closed folds
