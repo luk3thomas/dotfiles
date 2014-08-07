@@ -17,7 +17,7 @@ Indicators
 * `➜` / `»` : Renamed
 * `═` / `=` : Unmerged
 * `✖` / `-` : Deleted (This indicator can't be shown, as NERDTree doesn't display deleted files. I have no prefect idea to solve this problem currently.)
-* `✗` / `×` : Dirty (Only for directory)
+* `°` / `×` : Dirty (Only for directory)
 * `✔` / `ø` : Clean (Only for root directory)
 
 **Option** `let g:NERDTreeUseSimpleIndicator = 1` to show the simple indicator.

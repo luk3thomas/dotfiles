@@ -33,7 +33,7 @@ syn match NERDTreeGitStatusUnmerged #═#
 syn match NERDTreeGitStatusUnmerged /\[=\]/ms=s+1,me=e-1
 syn match NERDTreeGitStatusUntracked #✭#
 syn match NERDTreeGitStatusUntracked /\[\*\]/ms=s+1,me=e-1
-syn match NERDTreeGitStatusDirDirty #✗#
+syn match NERDTreeGitStatusDirDirty #°#
 syn match NERDTreeGitStatusDirDirty /\[×\]/ms=s+1,me=e-1
 syn match NERDTreeGitStatusDirClean #✔︎#
 syn match NERDTreeGitStatusDirClean /\[ø\]/ms=s+1,me=e-1

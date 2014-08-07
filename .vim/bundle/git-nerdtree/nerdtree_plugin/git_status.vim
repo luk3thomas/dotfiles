@@ -60,7 +60,7 @@ if !exists('s:NERDTreeIndicatorMap')
                     \ "Renamed"   : "➜",
                     \ "Unmerged"  : "═",
                     \ "Deleted"   : "✖",
-                    \ "Dirty"     : "✗",
+                    \ "Dirty"     : "°",
                     \ "Clean"     : "✔︎",
                     \ "Unknown"   : "?"
                     \ }
