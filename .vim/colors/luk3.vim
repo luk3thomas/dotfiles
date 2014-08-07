@@ -39,11 +39,16 @@ hi CursorLineNr              guifg=#bbbbbb ctermfg=248
 hi ColorColumn               guibg=#333435 ctermbg=235
 hi Special                   guifg=#777777 gui=NONE ctermfg=249
 
-" vim git gutter
+" git
 " -----
-" gutter background color
+" gutter background color, highlights
 
-hi SignColumn                ctermfg=NONE ctermbg=NONE	
+hi SignColumn                 ctermfg=NONE   ctermbg=NONE	
+hi NERDTreeGitStatusBrackets  ctermfg=8      ctermbg=NONE
+hi NERDTreeGitStatusModified  ctermfg=3      ctermbg=NONE
+hi NERDTreeGitStatusUntracked ctermfg=29     ctermbg=NONE
+hi NERDTreeGitStatusDeleted   ctermfg=1      ctermbg=NONE
+hi NERDTreeGitStatusDirDirty  ctermfg=13     ctermbg=NONE
 
 " Folds
 " -----
