@@ -28,7 +28,8 @@ inoremap {}     {}
 
 inoremap <? <?php<space><space>?><Esc>2hi
 
-nnoremap <leader>qp query_posts( array( <cr><tab>'posts_per_page' => -1,<cr>'post_type' => '',<cr>'orderby' => 'menu_order',<cr>'' => ''<cr>)<cr>);<cr><cr>get_template_part('loop', '');<cr><cr>wp_reset_query();<esc>8kla
+inoremap <leader>f function(){<cr>}<esc>k$hh
+inoremap <leader>qp query_posts( array( <cr><tab>'posts_per_page' => -1,<cr>'post_type' => '',<cr>'orderby' => 'menu_order',<cr>'' => ''<cr>)<cr>);<cr><cr>get_template_part('loop', '');<cr><cr>wp_reset_query();<esc>8kla
 
 
 au BufNewFile,BufRead *.less set filetype=less
@@ -45,11 +46,12 @@ map <S-tab> <c-w>h
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 map <F5> :set spell spelllang=en_us<CR>
+map <C-c> "*y
 nnoremap <leader>gg :Gstatus<cr>
 nnoremap <leader>gm :Gcommit<cr>
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>v :source $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 let g:closetag_html_style=1
 source ~/.vim/bundle/closetag/scripts/closetag.vim
 
