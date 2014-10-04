@@ -7,6 +7,7 @@ set ruler
 set hlsearch
 set formatoptions+=r
 set binary
+set nowritebackup
 set dictionary+=/usr/share/dict/words
 set encoding=utf-8 
 set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly
@@ -17,6 +18,7 @@ colorscheme luk3
 "colorscheme busierbee
 "colorscheme vividchalk
 "colorscheme railscast
+let mapleader=","
 
 "inoremap %{ {%  %}<esc>2hi " Django
 inoremap %% {{  }}<esc>2hi
@@ -34,11 +36,13 @@ inoremap <leader>qp query_posts( array( <cr><tab>'posts_per_page' => -1,<cr>'pos
 
 au BufNewFile,BufRead *.less set filetype=less
 filetype plugin on
+au BufNewFile,BufReadPre *.php filetype plugin indent on
 au BufNewFile,BufReadPre *.py filetype plugin indent on
 au BufNewFile,BufReadPre *.rb filetype plugin indent on
 au BufNewFile,BufReadPre *.ru set filetype=ruby
 au BufNewFile,BufReadPre Gemfile set filetype=ruby
 au BufNewFile,BufReadPre Guardfile set filetype=ruby
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 "
 map <F2> <c-w><c-w>
 map <tab> <c-w>l
@@ -47,8 +51,8 @@ map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 map <F5> :set spell spelllang=en_us<CR>
 map <C-c> "*y
-map <leader>[ [c
-map <leader>] ]c
+map <leader>j [c
+map <leader>k ]c
 nnoremap <leader>gg :Gstatus<cr>
 nnoremap <leader>gm :Gcommit<cr>
 nnoremap <leader>gb :Gblame<cr>
