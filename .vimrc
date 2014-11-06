@@ -46,6 +46,8 @@ Bundle 'SearchComplete'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'colorizer'
 
+Bundle 'elzr/vim-json'
+
 Bundle 'terryma/vim-multiple-cursors'
 let g:multi_cursor_next_key='<C-k>'
 let g:multi_cursor_prev_key='<C-l>'
