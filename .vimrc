@@ -44,6 +44,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'bufexplorer.zip'
 Bundle 'SuperTab'
 Bundle 'SearchComplete'
+Bundle 'edkolev/tmuxline.vim'
 
 Bundle 'YankRing.vim'
 nnoremap <leader>y :YRShow<cr>
