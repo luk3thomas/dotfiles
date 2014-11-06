@@ -7,10 +7,16 @@ set ruler
 set binary
 set hlsearch
 set nocompatible              " be iMproved, required
+set nobackup
 set nowritebackup
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+set wildmode=longest,list
+" make tab completion for files/buffers act like bash
+set wildmenu
 
 filetype off                  " required
 
@@ -33,6 +39,16 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'php.vim'
+Bundle 'Better-CSS-Syntax-for-Vim'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'bufexplorer.zip'
+Bundle 'SuperTab'
+Bundle 'SearchComplete'
+
+Bundle 'YankRing.vim'
+nnoremap <leader>y :YRShow<cr>
+inoremap <leader>y <esc>:YRShow<cr>
+let g:yankring_history_dir = "/tmp/"
 
 Bundle 'tpope/vim-fugitive'
 nnoremap <leader>gg :Gstatus<cr>
