@@ -1,3 +1,12 @@
 ;;; -*- coding: utf-8 -*-
 (("/Users/lthomas/.dotfiles/.emacs-live.el" . 111)
- ("/Users/lthomas/.emacs.d/elpa/archives/gnu/archive-contents" . 14965))
+ ("/Users/lthomas/.emacs.d/elpa/archives/gnu/archive-contents" . 14965)
+ ("/Users/lthomas/.emacs.d/elpa/archives/melpa/archive-contents" . 316138)
+ ("/Users/lthomas/.emacs.d/elpa/cider-20141003.518/cider-autoloads.el" . 4380)
+ ("/Users/lthomas/.emacs.d/elpa/clojure-mode-20140921.845/clojure-mode-autoloads.el" . 525)
+ ("/Users/lthomas/.emacs.d/elpa/dash-20141004.613/dash-autoloads.el" . 169)
+ ("/Users/lthomas/.emacs.d/elpa/epl-20140823.609/epl-autoloads.el" . 166)
+ ("/Users/lthomas/.emacs.d/elpa/pkg-info-20140610.630/pkg-info-autoloads.el" . 3961)
+ ("/Users/lthomas/.emacs.d/elpa/queue-0.1.1/queue-autoloads.el" . 341)
+ ("/Users/lthomas/.ido.last" . 2625)
+ ("/Users/lthomas/me/sandbox/clojure/clojure-noob/src/clojure_noob/core.clj" . 244))
