@@ -32,6 +32,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'php.vim'
 
 Bundle 'tpope/vim-fugitive'
 nnoremap <leader>gg :Gstatus<cr>
@@ -61,17 +62,13 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Nerd Tree
-map <F5> :set spell spelllang=en_us<CR>
-
 " Customizations
 colorscheme luk3
 inoremap <? <?php<space><space>?><Esc>2hi
 inoremap <leader>f function(){<cr>}<esc>k$hh
-
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+map <F5> :set spell spelllang=en_us<CR>
 " Copy to clipboard
 map <C-c> "*y
 
