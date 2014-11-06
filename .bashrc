@@ -20,6 +20,8 @@ PATH=$PATH:$GOPATH/bin
 PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
 
 export PGDATA=/usr/local/var/postgres
 
@@ -28,7 +30,9 @@ complete -o default -o nospace -W "$(/usr/bin/ruby -ne 'puts $_.split(/[,\s]+/)[
 complete -o default -o nospace -W "$(ls $HOME/.tmuxinator/*.yml | awk -F '/' '{print $NF}' | sed 's/\.yml//')" mux
 
 # tab completion for git
-source ~/.git-completion.sh
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
 
 # some more ls aliases
 alias c='clear'
@@ -85,3 +89,6 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='0;35;40'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
