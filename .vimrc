@@ -33,8 +33,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'gmarik/Vundle.vim'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
-Bundle 'terryma/vim-multiple-cursors'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
@@ -45,6 +44,12 @@ Bundle 'bufexplorer.zip'
 Bundle 'SuperTab'
 Bundle 'SearchComplete'
 Bundle 'edkolev/tmuxline.vim'
+Bundle 'colorizer'
+
+Bundle 'terryma/vim-multiple-cursors'
+let g:multi_cursor_next_key='<C-k>'
+let g:multi_cursor_prev_key='<C-l>'
+let g:multi_cursor_skip_key='<C-i>'
 
 Bundle 'YankRing.vim'
 nnoremap <leader>y :YRShow<cr>
@@ -80,7 +85,6 @@ filetype plugin indent on    " required
 
 
 " Customizations
-colorscheme luk3
 inoremap <? <?php<space><space>?><Esc>2hi
 inoremap <leader>f function(){<cr>}<esc>k$hh
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -89,3 +93,12 @@ map <F5> :set spell spelllang=en_us<CR>
 " Copy to clipboard
 map <C-c> "*y
 
+
+" Colors
+colorscheme luk3
+hi MatchParen cterm=bold ctermbg=none ctermfg=red
+hi Directory term=bold ctermfg=12 gui=bold guifg=Blue
+set term=xterm-256color
+set termencoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
