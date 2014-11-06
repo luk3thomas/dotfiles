@@ -1,87 +1,77 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+let mapleader = ","
+
 syntax on
-set t_ti= t_te=
-set si
+set incsearch
+set showcmd
 set ruler
-set hlsearch
-set formatoptions+=r
 set binary
+set hlsearch
+set nocompatible              " be iMproved, required
 set nowritebackup
-set dictionary+=/usr/share/dict/words
-set encoding=utf-8 
 set tabstop=4
 set shiftwidth=4
-set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly
-"set backspace=indent,eol,start
-hi MatchParen cterm=bold ctermbg=none ctermfg=red
-hi Directory term=bold ctermfg=12 gui=bold guifg=Blue
-colorscheme luk3
-"colorscheme busierbee
-"colorscheme vividchalk
-"colorscheme railscast
-let mapleader=","
+set expandtab
 
-"inoremap %{ {%  %}<esc>2hi " Django
-inoremap %% {{  }}<esc>2hi
-inoremap <% <%=  %><esc>2hi
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-"inoremap {{     {
-inoremap {}     {}
+filetype off                  " required
 
-inoremap <? <?php<space><space>?><Esc>2hi
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-inoremap <leader>f function(){<cr>}<esc>k$hh
-inoremap <leader>qp query_posts( array( <cr><tab>'posts_per_page' => -1,<cr>'post_type' => '',<cr>'orderby' => 'menu_order',<cr>'' => ''<cr>)<cr>);<cr><cr>get_template_part('loop', '');<cr><cr>wp_reset_query();<esc>8kla
+" let Vundle manage Vundle, required
+Bundle 'Align'
+Bundle 'Xuyuanp/nerdtree-git-plugin'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'gmarik/Vundle.vim'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-ruby/vim-ruby'
+
+Bundle 'tpope/vim-fugitive'
+nnoremap <leader>gg :Gstatus<cr>
+nnoremap <leader>gm :Gcommit<cr>
+nnoremap <leader>gb :Gblame<cr>
 
 
-au BufNewFile,BufRead *.less set filetype=less
-filetype plugin on
-au BufNewFile,BufReadPre *.php filetype plugin indent on
-au BufNewFile,BufReadPre *.py filetype plugin indent on
-au BufNewFile,BufReadPre *.rb filetype plugin indent on
-""au BufNewFile,BufReadPre *.ru set filetype=ruby
-""au BufNewFile,BufReadPre Gemfile set filetype=ruby
-""au BufNewFile,BufReadPre Guardfile set filetype=ruby
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-"
+Bundle 'kien/ctrlp.vim'
+set wildignore+=*node_modules/*
+
+Bundle 'scrooloose/nerdtree'
 map <F2> <c-w><c-w>
 map <tab> <c-w>l
 map <S-tab> <c-w>h
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
-map <F5> :set spell spelllang=en_us<CR>
-map <C-c> "*y
-map <leader>j [c
-map <leader>k ]c
-nnoremap <leader>gg :Gstatus<cr>
-nnoremap <leader>gm :Gcommit<cr>
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-let g:closetag_html_style=1
-source ~/.vim/bundle/closetag/scripts/closetag.vim
 
-let g:AutoPairsCenterLine = 0
-let g:local_vimrc = '.vi'
-let g:PreserveNoEOL = 1
-"set foldmethod=indent
-""set foldnestmax=10
-""set nofoldenable
-""set foldlevel=1
-set expandtab
-set wildignore+=*node_modules/*
-
-" Vim airline
+Bundle 'bling/vim-airline'
 set laststatus=2
 let g:airline_powerline_fonts = 1 
-set t_Co=256
 
-set guifont=Inconsolata\ for\ Powerline:h15
-let g:Powerline_symbols = 'fancy'
-set encoding=utf-8
-set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
-set termencoding=utf-8
+Bundle 'localvimrc'
+let g:local_vimrc = '.vi'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Nerd Tree
+map <F5> :set spell spelllang=en_us<CR>
+
+" Customizations
+colorscheme luk3
+inoremap <? <?php<space><space>?><Esc>2hi
+inoremap <leader>f function(){<cr>}<esc>k$hh
+
+" Copy to clipboard
+map <C-c> "*y
+
