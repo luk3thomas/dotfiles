@@ -10,6 +10,8 @@ set binary
 set nowritebackup
 set dictionary+=/usr/share/dict/words
 set encoding=utf-8 
+set tabstop=4
+set shiftwidth=4
 set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly
 "set backspace=indent,eol,start
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
@@ -39,9 +41,9 @@ filetype plugin on
 au BufNewFile,BufReadPre *.php filetype plugin indent on
 au BufNewFile,BufReadPre *.py filetype plugin indent on
 au BufNewFile,BufReadPre *.rb filetype plugin indent on
-au BufNewFile,BufReadPre *.ru set filetype=ruby
-au BufNewFile,BufReadPre Gemfile set filetype=ruby
-au BufNewFile,BufReadPre Guardfile set filetype=ruby
+""au BufNewFile,BufReadPre *.ru set filetype=ruby
+""au BufNewFile,BufReadPre Gemfile set filetype=ruby
+""au BufNewFile,BufReadPre Guardfile set filetype=ruby
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 "
 map <F2> <c-w><c-w>
