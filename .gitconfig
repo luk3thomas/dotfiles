@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+	user = Luke Thomas
+	email = luk3thomas@gmail.com
+	excludesfile = /Users/lthomas1/.gitignore
+[user]
+	name = Luke Thomas
+	email = luk3thomas@gmail.com
