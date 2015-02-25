@@ -82,6 +82,9 @@ alias ta="tmux attach-session -t"
 alias t="todo"
 
 alias pgimport="pg_restore --verbose --clean --no-acl --no-owner -h localhost"
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop"
+
 
 export CLICOLOR=1
 
@@ -89,6 +92,8 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='0;35;40'
+
+source ~/.bashrc-includes/*
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
