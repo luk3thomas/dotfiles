@@ -5,3 +5,5 @@
 .DS_Store
 .vim/.VimballRecord
 .vim/bundle
+.todo
+npm-debug.log
