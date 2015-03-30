@@ -1,3 +1,5 @@
+set shiftwidth=2
+set tabstop=2
 let color0   = "guifg=#000000 guibg=NONE gui=NONE ctermfg=0   ctermbg=NONE cterm=NONE"
 let color233 = "guifg=#121212 guibg=NONE gui=NONE ctermfg=233 ctermbg=NONE cterm=NONE"
 let color234 = "guifg=#1c1c1c guibg=NONE gui=NONE ctermfg=234 ctermbg=NONE cterm=NONE"
