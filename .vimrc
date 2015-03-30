@@ -30,6 +30,7 @@ call vundle#begin()
 Bundle 'Align'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'yegappan/grep'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jelera/vim-javascript-syntax'
