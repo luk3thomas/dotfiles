@@ -36,7 +36,9 @@ fi
 
 # some more ls aliases
 alias c='clear'
-alias bx='bundle exec'
+alias b='bundle exec'
+alias be='bundle exec'
+alias br='bundle exec rake'
 alias ll='ls -l'
 alias i='identify'
 alias la='ls -A'
@@ -59,11 +61,10 @@ alias gc="git checkout"
 alias gca="git commit --amend"
 alias gd="git diff"
 alias gdc="git diff --cached"
-alias gl="git log --graph --pretty=format:'%h | %cr | %cn | %s'"
+alias gl="git log --graph --pretty=format:'%h%C(yellow)%d%C(reset) | %cr | %cn | %s'"
 alias gp="git push --tags"
 alias gits="git status"
 alias gg="git status"
-alias sencha="/opt/SenchaSDKTools-2.0.0-beta2/sencha"
 alias rgrep="egrep -r"
 alias rfgrep="grep -r -F"
 alias fgrep="find . -type f | egrep"
@@ -97,3 +98,7 @@ source ~/.bashrc-includes/*
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+if [ -s $HOME/.awsam/bash.rc ]; then
+  source $HOME/.awsam/bash.rc
+fi
