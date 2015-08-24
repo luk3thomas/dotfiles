@@ -1,3 +1,0 @@
-#name: require midje
-# --
-[midje.sweet :refer :all]
