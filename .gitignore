@@ -7,3 +7,20 @@
 .vim/bundle
 .todo
 npm-debug.log
+
+# emacs.d specific
+
+.emacs.d/elpa
+.smex-items
+*~$
+places
+.recentf
+cider-history
+projectile-bookmarks.eld
+projectile.cache
+ido.last
+auto-save-list
+backups
+archive-contents
+.cask
+cider
