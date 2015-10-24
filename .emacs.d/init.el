@@ -82,6 +82,9 @@
     ;; moving around
     ace-jump-mode
 
+    multiple-cursors
+    evil
+
     yaml-mode
     coffee-mode
     scss-mode
@@ -144,6 +147,7 @@
 ;; Plugin-specific
 (load "plugins/ace-jump-mode.el")
 (load "plugins/key-chord.el")
+(load "plugins/evil-mode.el")
 
 
 ;; Langauage-specific
@@ -169,3 +173,8 @@
  ;;'(mode-line ((t (:foreground "#333" :background "#bad063" :box nil))))
  )
 (put 'downcase-region 'disabled nil)
+
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)

@@ -74,3 +74,5 @@
     (quit nil)))
 
 (setq electric-indent-mode nil)
+
+(global-set-key (kbd "RET") 'newline-and-indent)
