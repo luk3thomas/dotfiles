@@ -40,7 +40,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-haml'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'easymotion/vim-easymotion'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'lambdatoast/elm.vim'
 Bundle 'php.vim'
@@ -102,6 +101,9 @@ map <F5> :set spell spelllang=en_us<CR>
 " Copy to clipboard
 map <C-c> "*y
 
+" easymotion
+Bundle 'easymotion/vim-easymotion'
+nmap ; <Plug>(easymotion-s)
 
 " Colors
 colorscheme luk3
