@@ -15,6 +15,7 @@ export GOPATH=$HOME/go
 
 PATH=/usr/local/bin:$PATH
 PATH=$PATH:~/bin
+PATH=$PATH:./bin
 PATH=$PATH:/usr/local/heroku/bin
 PATH=$PATH:$GOPATH/bin
 PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
