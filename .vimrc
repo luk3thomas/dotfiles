@@ -105,6 +105,11 @@ map <C-c> "*y
 Bundle 'easymotion/vim-easymotion'
 nmap ; <Plug>(easymotion-s)
 
+" transpose words like emacs
+Bundle 'transpose-words'
+:nmap <Leader>t <Plug>Transposewords
+:imap <Leader>t <Plug>Transposewords
+
 " Colors
 colorscheme luk3
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
@@ -113,3 +118,11 @@ set term=xterm-256color
 set termencoding=utf-8
 set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
+
+" You can use Ctrl-O to remap Ctrl-h/j/k/l to move the cursor while in insert
+" mode without using the arrow keys:
+:imap <C-h> <C-o>h
+:imap <C-j> <C-o>j
+:imap <C-k> <C-o>k
+:imap <C-b> <C-o>b
+:imap <C-w> <C-o>w
