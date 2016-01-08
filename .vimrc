@@ -28,6 +28,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Bundle 'Align'
+Bundle 'paredit.vim'
 Bundle 'Xuyuanp/nerdtree-git-plugin'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'yegappan/grep'
@@ -50,6 +51,7 @@ Bundle 'SearchComplete'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'colorizer'
 Bundle 'elixir-lang/vim-elixir'
+Bundle 'raichoo/purescript-vim'
 Bundle 'vim-scripts/VimClojure'
 
 Bundle 'elzr/vim-json'
