@@ -31,5 +31,6 @@
         evil-set-marker
         evil-visual-char
         kill-region
+        paredit-forward-slurp-sexp
         smex
         ))

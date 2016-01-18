@@ -148,6 +148,7 @@
 (load "plugins/ace-jump-mode.el")
 (load "plugins/key-chord.el")
 (load "plugins/evil-mode.el")
+(load "plugins/clj-refactor.el")
 
 
 ;; Langauage-specific
