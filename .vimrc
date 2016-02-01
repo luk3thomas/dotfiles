@@ -130,9 +130,13 @@ set fillchars+=stl:\ ,stlnc:\
 :imap <C-w> <C-o>w
 
 " Move text up and down, kind of hacky and only works on OSX
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
-inoremap ∆ <Esc>:m .+1<CR>==gi
-inoremap ˚ <Esc>:m .-2<CR>==gi
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
+nnoremap ∆ :m .+1<CR>
+nnoremap ˚ :m .-2<CR>
+inoremap ∆ <Esc>:m .+1<CR>i
+inoremap ˚ <Esc>:m .-2<CR>i
+vnoremap ∆ :m '>+1<CR>gv
+vnoremap ˚ :m '<-2<CR>gv
+
+" Disable beeping
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
