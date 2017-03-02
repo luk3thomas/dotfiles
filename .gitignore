@@ -24,3 +24,5 @@ backups
 archive-contents
 .cask
 cider
+dump.rdb
+npm-debug*

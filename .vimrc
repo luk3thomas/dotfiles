@@ -81,6 +81,7 @@ map <tab> <c-w>l
 map <S-tab> <c-w>h
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 Bundle 'bling/vim-airline'
 set laststatus=2
@@ -88,6 +89,8 @@ let g:airline_powerline_fonts = 1
 
 Bundle 'localvimrc'
 let g:local_vimrc = '.vi'
+
+Bundle 'dermusikman/sonicpi.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

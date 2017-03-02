@@ -12,16 +12,14 @@ PS1="\u \[\e[0;33m\]\]\w\[\e[0;32m\]\]\[\e[1;30m\]\]\$(git branch 2> /dev/null |
 PS1="\w\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/') $ "
 
 export GOPATH=$HOME/go
+export HISTFILESIZE=
 
 PATH=/usr/local/bin:$PATH
-PATH=$PATH:~/bin
-PATH=$PATH:./bin
-PATH=$PATH:/usr/local/heroku/bin
-PATH=$PATH:$GOPATH/bin
+PATH=~/bin:$PATH
+PATH=./bin:$PATH
 PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-source $(brew --prefix nvm)/nvm.sh
 export NVM_DIR=~/.nvm
 
 export PGDATA=/usr/local/var/postgres
@@ -103,3 +101,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 if [ -s $HOME/.awsam/bash.rc ]; then
   source $HOME/.awsam/bash.rc
 fi
+
+# asdf plugins
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
