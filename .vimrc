@@ -53,6 +53,7 @@ Bundle 'colorizer'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'raichoo/purescript-vim'
 Bundle 'vim-scripts/VimClojure'
+Bundle 'leafgarland/typescript-vim'
 
 Bundle 'elzr/vim-json'
 
