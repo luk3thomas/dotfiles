@@ -1,3 +1,0 @@
-#name: ns
-# --
-(in-ns '${1:name})

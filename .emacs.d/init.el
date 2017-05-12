@@ -1,181 +1,35 @@
-;;;;
-;; Packages
-;;;;
-
-;; Define package repositories
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("tromey" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("org" . "http://orgmode.org/elpa/") t)
-
-;; (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
-
-;; Load and activate emacs packages. Do this first so that the
-;; packages are loaded before you start trying to modify them.
-;; This also sets the load path.
-(package-initialize)
-
-;; Download the ELPA archive description if needed.
-;; This informs Emacs about the latest versions of all packages, and
-;; makes them available for download.
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;; The packages you want installed. You can also install these
-;; manually with M-x package-install
-;; Add in your own as you wish:
-(defvar my-packages
-  '(;; makes handling lisp expressions much, much easier
-    ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    paredit
-
-    ;; key bindings and code colorization for Clojure
-    ;; https://github.com/clojure-emacs/clojure-mode
-    clojure-mode
-
-    ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
-
-    ;; integration with a Clojure REPL
-    ;; https://github.com/clojure-emacs/cider
-    cider
-
-    ;; allow ido usage in as many contexts as possible. see
-    ;; customizations/better-defaults.el line 47 for a description
-    ;; of ido
-    ido-ubiquitous
-
-    ;; Enhances M-x to allow easier execution of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
-    smex
-
-    ;; On OS X, an Emacs instance started from the graphical user
-    ;; interface will have a different environment than a shell in a
-    ;; terminal window, because OS X does not run a shell during the
-    ;; login. Obviously this will lead to unexpected results when
-    ;; calling external utilities like make from Emacs.
-    ;; This library works around this problem by copying important
-    ;; environment variables from the user's shell.
-    ;; https://github.com/purcell/exec-path-from-shell
-    exec-path-from-shell
-
-    ;; project navigation
-    projectile
-
-    ;; colorful parenthesis matching
-    rainbow-delimiters
-
-    ;; edit html tags like sexps
-    tagedit
-
-    ;; git integration
-    magit
-
-    ;; moving around
-    ace-jump-mode
-
-    multiple-cursors
-    evil
-
-    yaml-mode
-    coffee-mode
-    scss-mode
-    haskell-mode
-    company
-    ack-and-a-half
-    ag
-    enh-ruby-mode))
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
-
-
-;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
-;; to load them.
+;;; init.el --- Spacemacs Initialization File
 ;;
-;; For example, if you download yaml-mode.el to ~/.emacs.d/vendor,
-;; then you can add the following code to this file:
+;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
-;; (require 'yaml-mode)
-;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
-;; Adding this code will make Emacs enter yaml mode whenever you open
-;; a .yml file
-(add-to-list 'load-path "~/.emacs.d/vendor")
+;; Author: Sylvain Benner <sylvain.benner@gmail.com>
+;; URL: https://github.com/syl20bnr/spacemacs
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; License: GPLv3
 
-;;;;
-;; Customization
-;;;;
+;; Without this comment emacs25 adds (package-initialize) here
+;; (package-initialize)
 
-;; Add a directory to our load path so that when you `load` things
-;; below, Emacs knows where to look for the corresponding file.
-(add-to-list 'load-path "~/.emacs.d/customizations")
+;; Increase gc-cons-threshold, depending on your system you may set it back to a
+;; lower value in your dotfile (function `dotspacemacs/user-config')
+(setq gc-cons-threshold 100000000)
 
-;; Sets up exec-path-from-shell so that Emacs will use the correct
-;; environment variables
-(load "shell-integration.el")
+(defconst spacemacs-version          "0.200.7" "Spacemacs version.")
+(defconst spacemacs-emacs-min-version   "24.4" "Minimal version of Emacs.")
 
-;; These customizations make it easier for you to navigate files,
-;; switch buffers, and choose options from the minibuffer.
-(load "navigation.el")
-
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements
-(load "ui.el")
-
-;; These customizations make editing a bit nicer.
-(load "editing.el")
-
-;; Hard-to-categorize customizations
-(load "misc.el")
-
-;; For editing lisps
-(load "elisp-editing.el")
-
-;; Asciidoc
-(load "doc-mode.el")
-
-;; Plugin-specific
-(load "plugins/ace-jump-mode.el")
-(load "plugins/key-chord.el")
-(load "plugins/evil-mode.el")
-(load "plugins/clj-refactor.el")
-
-
-;; Langauage-specific
-(load "setup-clojure.el")
-(load "setup-js.el")
-(load "setup-css.el")
-(load "setup-yaml.el")
-(load "setup-org.el")
-(load "setup-prolog.el")
-(load "setup-ruby.el")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(coffee-tab-width 2))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ;; '(magit-item-highlight ((t (:background "gray10"))))
- ;;'(mode-line ((t (:foreground "#333" :background "#bad063" :box nil))))
- )
-(put 'downcase-region 'disabled nil)
-
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+(if (not (version<= spacemacs-emacs-min-version emacs-version))
+    (message (concat "Your version of Emacs (%s) is too old. "
+                     "Spacemacs requires Emacs version %s or above.")
+             emacs-version spacemacs-emacs-min-version)
+  (load-file (concat (file-name-directory load-file-name)
+                     "core/core-load-paths.el"))
+  (require 'core-spacemacs)
+  (spacemacs/init)
+  (spacemacs/maybe-install-dotfile)
+  (configuration-layer/sync)
+  (spacemacs-buffer/display-info-box)
+  (spacemacs/setup-startup-hook)
+  (require 'server)
+  (unless (server-running-p) (server-start)))

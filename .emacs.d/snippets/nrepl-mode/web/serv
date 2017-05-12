@@ -1,3 +1,0 @@
-#name: serv
-# --
-(def server (-main))

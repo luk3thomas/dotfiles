@@ -1,3 +1,0 @@
-#name: con
-# --
-console.log(${1:log})
