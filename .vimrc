@@ -2,6 +2,7 @@ let mapleader = ","
 
 syntax on
 set incsearch
+set number
 set showcmd
 set ruler
 set binary
@@ -54,6 +55,7 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'raichoo/purescript-vim'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'mitermayer/vim-prettier'
 
 Bundle 'elzr/vim-json'
 
@@ -97,10 +99,18 @@ Bundle 'dermusikman/sonicpi.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" vim-prettier
+let g:prettier#config#print_width = 80
+let g:prettier#config#tab_width = 2
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#semi = 'true'
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#parser = 'flow'
 
 " Customizations
-inoremap <? <?php<space><space>?><Esc>2hi
-inoremap <leader>f function(){<cr>}<esc>k$hh
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 map <F5> :set spell spelllang=en_us<CR>

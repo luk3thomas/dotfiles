@@ -9,7 +9,7 @@ export EDITOR='vim'
 
 PS1="\u@\H: \w \$ "
 PS1="\u \[\e[0;33m\]\]\w\[\e[0;32m\]\]\[\e[1;30m\]\]\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/')\[\e[0;32m\]\] \[\e[0;37m\]\]$\[\e[0;32m\]\] "
-PS1="\w\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/') $ "
+PS1="\e[94m\w\e[90m\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/')\e[39m \n$ "
 
 export GOPATH=$HOME/go
 export HISTFILESIZE=
