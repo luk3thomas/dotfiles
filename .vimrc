@@ -93,8 +93,6 @@ let g:airline_powerline_fonts = 1
 Bundle 'localvimrc'
 let g:local_vimrc = '.vi'
 
-Bundle 'dermusikman/sonicpi.vim'
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
