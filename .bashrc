@@ -102,6 +102,16 @@ if [ -s $HOME/.awsam/bash.rc ]; then
   source $HOME/.awsam/bash.rc
 fi
 
+_apex()  {
+  COMPREPLY=()
+  local cur="${COMP_WORDS[COMP_CWORD]}"
+  local opts="$(apex autocomplete -- ${COMP_WORDS[@]:1})"
+  COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+  return 0
+}
+
+complete -F _apex apex
+
 # asdf plugins
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

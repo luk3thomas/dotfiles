@@ -56,6 +56,7 @@ Bundle 'raichoo/purescript-vim'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'mitermayer/vim-prettier'
+Bundle 'jparise/vim-graphql'
 
 Bundle 'elzr/vim-json'
 
@@ -88,7 +89,7 @@ let NERDTreeIgnore = ['\.pyc$']
 
 Bundle 'bling/vim-airline'
 set laststatus=2
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 
 Bundle 'localvimrc'
 let g:local_vimrc = '.vi'
@@ -105,7 +106,7 @@ let g:prettier#config#semi = 'true'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#trailing_comma = 'es5'
 let g:prettier#config#parser = 'flow'
 
 " Customizations
