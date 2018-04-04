@@ -52,7 +52,7 @@ alias ms='mysqlshow -uroot'
 alias ga="git add"
 alias gaa="git add ."
 alias gad="git add -u ."
-alias gb="git branch"
+alias gb="git branch --sort=-committerdate"
 alias gm="git commit -m"
 alias gr="git remote"
 alias grm="git rm"
