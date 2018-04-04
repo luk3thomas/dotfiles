@@ -1,6 +1,6 @@
 ;;; packages.el --- Org Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -24,8 +24,7 @@
     (org :location built-in)
     (org-agenda :location built-in)
     org-download
-    ;; org-mime is installed by `org-plus-contrib'
-    (org-mime :location built-in)
+    org-mime
     org-pomodoro
     org-present
     (org-projectile :toggle (configuration-layer/package-usedp 'projectile))
@@ -133,7 +132,7 @@
 
       (with-eval-after-load 'org-src
         (spacemacs/set-leader-keys-for-minor-mode 'org-src-mode
-          "'" 'org-edit-src-exit
+          dotspacemacs-major-mode-leader-key 'org-edit-src-exit
           "c" 'org-edit-src-exit
           "a" 'org-edit-src-abort
           "k" 'org-edit-src-abort))
@@ -158,7 +157,8 @@ Will work on both org-mode and any mode that accepts plain html."
             (insert (format tag ""))
             (forward-char -8))))
 
-      (dolist (prefix '(("mx" . "text")
+      (dolist (prefix '(("me" . "export")
+                        ("mx" . "text")
                         ("mh" . "headings")
                         ("mi" . "insert")
                         ("mS" . "subtrees")
@@ -172,7 +172,7 @@ Will work on both org-mode and any mode that accepts plain html."
         "c" 'org-capture
         "d" 'org-deadline
         "D" 'org-insert-drawer
-        "e" 'org-export-dispatch
+        "ee" 'org-export-dispatch
         "f" 'org-set-effort
         "P" 'org-set-property
         ":" 'org-set-tags
@@ -254,6 +254,7 @@ Will work on both org-mode and any mode that accepts plain html."
         "s" 'org-schedule
 
         ;; insertion of common elements
+        "ia" 'org-attach
         "il" 'org-insert-link
         "if" 'org-footnote-new
         "ik" 'spacemacs/insert-keybinding-org

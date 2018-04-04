@@ -1,6 +1,6 @@
 ;;; packages.el --- cscope Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2017 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -48,7 +48,7 @@
       "Setup `helm-cscope' for MODE"
       (spacemacs/set-leader-keys-for-major-mode mode
         "gc" 'helm-cscope-find-called-function
-        "gC" 'helm-cscope-find-calling-this-funtcion
+        "gC" 'helm-cscope-find-calling-this-function
         "gd" 'helm-cscope-find-global-definition
         "ge" 'helm-cscope-find-egrep-pattern
         "gf" 'helm-cscope-find-this-file

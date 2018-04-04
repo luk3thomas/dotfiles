@@ -1,6 +1,6 @@
 <a name="top"></a>
 <a href="http://spacemacs.org"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="Made with Spacemacs"></a><a href="http://www.twitter.com/spacemacs"><img src="http://i.imgur.com/tXSoThF.png" alt="Twitter" align="right"></a><br>
-***
+- - -
 <p align="center"><img src="/doc/img/title2.png" alt="Spacemacs"/></p>
 <p align="center">
 <b><a href="http://spacemacs.org/doc/DOCUMENTATION#orgheadline5">philosophy</a></b>
@@ -13,11 +13,13 @@
 |
 <b><a href="CONTRIBUTING.org">contribute</a></b>
 |
-<b><a href="http://spacemacs.org/doc/DOCUMENTATION#orgheadline187">achievements</a></b>
+<b><a href="http://spacemacs.org/doc/DOCUMENTATION#achievements">achievements</a></b>
 |
 <b><a href="http://spacemacs.org/doc/FAQ">FAQ</a></b>
 </p>
-***
+
+- - -
+
 <p align="center">
 <a href="https://gitter.im/syl20bnr/spacemacs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/Join Chat.svg" alt="Gitter"></a>
 <a href="https://travis-ci.org/syl20bnr/spacemacs"><img src="https://travis-ci.org/syl20bnr/spacemacs.svg" alt="Build Status"></a>
@@ -26,7 +28,8 @@
 <a href="https://shop.spreadshirt.com/spacemacs-shop"><img src="https://img.shields.io/badge/Shop-T--Shirts-blue.svg" alt="Donate"></a>
 <a href="http://www.slant.co/topics/12/~what-are-the-best-programming-text-editors"><img src="https://img.shields.io/badge/Slant-Recommend-ff69b4.svg" alt="Recommend it"></a>
 </p>
-***
+
+- - -
 
 **Quick Install:**
 
@@ -156,6 +159,13 @@ just builds GNU Emacs with support of several features by default along with
 providing Spacemacs icon.
 See [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) for more
 information.
+
+*Note*: to have the title bar match your theme background color,
+consider using instead:
+
+``` sh
+$ brew install emacs-plus --HEAD --with-natural-title-bars
+```
 
 *Note:* after you have completed the [install process](#install) below, it is
 also recommended to add the [osx layer][] to your [dotfile][]. Install
