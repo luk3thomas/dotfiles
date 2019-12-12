@@ -1,3 +1,6 @@
+HISTSIZE=
+HISTFILESIZE=
+
 # hack for tmux
 if [ -f /etc/profile ]; then
   PATH=""
@@ -15,8 +18,9 @@ export GOPATH=$HOME/go
 export HISTFILESIZE=
 
 PATH=/usr/local/bin:$PATH
-PATH=~/bin:$PATH
 PATH=./bin:$PATH
+PATH=~/bin:$PATH
+PATH=$GOPATH/bin:$PATH
 PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -27,6 +31,9 @@ export PGDATA=/usr/local/var/postgres
 # tab completion for ssh
 complete -o default -o nospace -W "$(/usr/bin/ruby -ne 'puts $_.split(/[,\s]+/)[1..-1].reject{|host| host.match(/\*|\?/)} if $_.match(/^\s*Host\s+/);' < $HOME/.ssh/config)" scp sftp ssh
 complete -o default -o nospace -W "$(ls $HOME/.tmuxinator/*.yml | awk -F '/' '{print $NF}' | sed 's/\.yml//')" mux
+# tab completion for make
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
+
 
 # tab completion for git
 if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -116,8 +123,18 @@ complete -F _apex apex
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/lthomas1/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/lthomas1/Downloads/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/Users/lthomas1/env' ]; then source '/Users/lthomas1/env'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/lthomas1/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lthomas1/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/lthomas1/.asdf/installs/nodejs/12.0.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /Users/lthomas1/.asdf/installs/nodejs/12.0.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash

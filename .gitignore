@@ -1,4 +1,5 @@
 .ignore
+.vscode
 .vim/.netrwhist
 *.sw[o-p]
 *~
@@ -7,6 +8,7 @@
 .vim/bundle
 .todo
 npm-debug.log
+todo
 
 # emacs.d specific
 

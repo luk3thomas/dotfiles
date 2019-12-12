@@ -10,8 +10,8 @@ set hlsearch
 set nocompatible              " be iMproved, required
 set nobackup
 set nowritebackup
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -59,6 +59,7 @@ Bundle 'vim-scripts/VimClojure'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'mitermayer/vim-prettier'
 Bundle 'jparise/vim-graphql'
+Bundle 'fatih/vim-go'
 
 Bundle 'elzr/vim-json'
 
@@ -101,15 +102,19 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " vim-prettier
-let g:prettier#config#print_width = 80
-let g:prettier#config#tab_width = 2
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#trailing_comma = 'es5'
-let g:prettier#config#parser = 'flow'
+" let g:prettier#config#print_width = 80
+" let g:prettier#config#tab_width = 2
+" let g:prettier#config#use_tabs = 'false'
+" let g:prettier#config#semi = 'true'
+" let g:prettier#config#single_quote = 'false'
+" let g:prettier#config#bracket_spacing = 'true'
+" let g:prettier#config#jsx_bracket_same_line = 'false'
+" let g:prettier#config#trailing_comma = 'es5'
+" let g:prettier#config#parser = 'flow'
+
+" vim-go
+"let g:go_metalinter_autosave = 1
+let g:go_auto_type_info = 1
 
 " Customizations
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
