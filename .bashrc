@@ -1,5 +1,6 @@
 HISTSIZE=
 HISTFILESIZE=
+export GPG_TTY=$(tty)
 
 # hack for tmux
 if [ -f /etc/profile ]; then
@@ -22,8 +23,6 @@ PATH=./bin:$PATH
 PATH=~/bin:$PATH
 PATH=$GOPATH/bin:$PATH
 PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export NVM_DIR=~/.nvm
 
 export PGDATA=/usr/local/var/postgres
