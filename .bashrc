@@ -77,7 +77,7 @@ alias pgrep="ps -e | grep"
 alias now="date +%Y%m%d%H%M%S"
 alias localhost="sudo chown luk3:www-data -Rv"
 alias brake="bundle exec rake"
-alias server="python -m SimpleHTTPServer"
+alias server="python -m http.server"
 alias math="bc -l"
 alias tmux="tmux -2"
 alias ts="tmux list-sessions"
@@ -86,6 +86,9 @@ alias tk="tmux kill-session -t"
 alias tka="tmux kill-server"
 alias ta="tmux attach-session -t"
 alias t="todo"
+alias aws_account_id="aws sts get-caller-identity | jq .Account | sed 's/\"//g' | pbcopy"
+alias aws_get_classic_load_balancers="aws elb describe-load-balancers | jq .LoadBalancerDescriptions[].DNSName | sed 's/\"//g'"
+alias aws_get_load_balancers="aws elbv2 describe-load-balancers | jq .LoadBalancers[].DNSName | sed 's/\"//g'"
 
 alias pgimport="pg_restore --verbose --clean --no-acl --no-owner -h localhost"
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
@@ -103,10 +106,6 @@ source ~/.bashrc-includes/*
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-if [ -s $HOME/.awsam/bash.rc ]; then
-  source $HOME/.awsam/bash.rc
-fi
 
 _apex()  {
   COMPREPLY=()
@@ -137,3 +136,23 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [ -f /Users/lthomas1/.asdf/installs/nodejs/12.0.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /Users/lthomas1/.asdf/installs/nodejs/12.0.0/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+
+if [ -s $HOME/.aaws/aaws.sh ]; then
+  source $HOME/.aaws/aaws.sh
+fi
+
+function aws_lookup_private_ip_by_public() {
+  aws ec2 describe-instances --filters Name=ip-address,Values=$1 | jq .Reservations[].Instances[].NetworkInterfaces[].PrivateIpAddress
+}
+
+function aws_ecs_list_all_services() {
+  aws ecs list-clusters | jq .clusterArns[] | sed 's/"//g' | while read l; do
+    echo $l
+    aws ecs list-services --cluster $l | jq .serviceArns[]
+    echo
+  done
+}
+
+function aws_ec2_search() {
+  aws ec2 describe-instances --query 'Reservations[*].Instances[*].{Name:Tags[?Key==`Name`]|[0].Value,Ip:PrivateIpAddress}' --output text --filter "Name=tag:Name,Values=*$1*" | sort -k 2 -t "\t"
+}

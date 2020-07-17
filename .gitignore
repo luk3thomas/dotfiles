@@ -28,3 +28,5 @@ archive-contents
 cider
 dump.rdb
 npm-debug*
+.env*
+tmp
