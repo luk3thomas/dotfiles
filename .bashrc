@@ -14,6 +14,8 @@ export EDITOR='vim'
 PS1="\u@\H: \w \$ "
 PS1="\u \[\e[0;33m\]\]\w\[\e[0;32m\]\]\[\e[1;30m\]\]\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/')\[\e[0;32m\]\] \[\e[0;37m\]\]$\[\e[0;32m\]\] "
 PS1="\e[94m\w\e[90m\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/')\e[39m \n$ "
+#PS1="\e[94m\w\e[95m \$(date +%H:%M:%S)\e[90m\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/ \1/')\e[39m \n$ "
+
 
 export GOPATH=$HOME/go
 export HISTFILESIZE=
@@ -40,6 +42,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 # some more ls aliases
+alias gp="git push origin head"
 alias c='clear'
 alias b='bundle exec'
 alias be='bundle exec'
@@ -94,6 +97,7 @@ alias pgimport="pg_restore --verbose --clean --no-acl --no-owner -h localhost"
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop"
 
+complete -C $(which aws_completer) aws
 
 export CLICOLOR=1
 
@@ -156,3 +160,15 @@ function aws_ecs_list_all_services() {
 function aws_ec2_search() {
   aws ec2 describe-instances --query 'Reservations[*].Instances[*].{Name:Tags[?Key==`Name`]|[0].Value,Ip:PrivateIpAddress}' --output text --filter "Name=tag:Name,Values=*$1*" | sort -k 2 -t "\t"
 }
+
+function ecs_cli_ps() {
+  ecs-cli ps --cluster $(aws ecs list-clusters | jq .clusterArns | grep "$1" | sed -r 's/\"|,//g')
+}
+
+# Created by `userpath` on 2020-11-02 17:13:50
+export PATH="$PATH:/Users/lthomas1/.local/bin"
+
+eval "$(asdf exec direnv hook bash)"
+direnv() { asdf exec direnv "$@"; }
+
+

@@ -30,3 +30,4 @@ dump.rdb
 npm-debug*
 .env*
 tmp
+.tool-versions

@@ -12,3 +12,5 @@
 	templatedir = ~/.git_template
 [tag]
 	gpgsign = true
+[pull]
+  rebase = true
